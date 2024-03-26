@@ -64,3 +64,4 @@ with torch.no_grad():
 
 # Convierte las predicciones a un DataFrame de pandas y descodifica las variables categóricas si es necesario
 predictions_df = pd.DataFrame(predictions, columns=['goles_equipo_local', 'goles_equipo_visitante'])
+print(predictions_df)
