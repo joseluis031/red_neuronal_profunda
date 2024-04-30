@@ -29,10 +29,10 @@ y = resultados[['goles_equipo_local', 'goles_equipo_visitante']]
 X = pd.get_dummies(X)
 
 # Dividir datos en conjunto de entrenamiento y conjunto de prueba
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=50)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=40)
 
 # Entrenar el modelo de regresión gaussiana
-kernel = 1.0 * RBF(length_scale=1.0)
+kernel = 0.5 * RBF(length_scale=1.0)
 modelo = GaussianProcessRegressor(kernel=kernel, random_state=0)
 modelo.fit(X_train, y_train)
 
@@ -42,11 +42,17 @@ octavos = pd.read_csv("Eliminatoria actual/eliminatoria.csv")
 X_octavos = octavos[['fase', 'equipo_local', 'equipo_visitante']]
 X_octavos_encoded = pd.get_dummies(X_octavos)
 
+# Obtener las columnas de los datos de entrenamiento
+columnas_entrenamiento = X_train.columns
+
+# Alinear las columnas de los datos de predicción con las del entrenamiento
+X_octavos_encoded_alineado = X_octavos_encoded.reindex(columns=columnas_entrenamiento, fill_value=0)
+
 # Realizar predicciones para los octavos de final
-predicciones = modelo.predict(X_octavos_encoded)
+predicciones = modelo.predict(X_octavos_encoded_alineado)
 
 # Rellenar valores faltantes con las predicciones y asegurarse de que sean enteros y positivos
 octavos[['goles_equipo_local', 'goles_equipo_visitante']] = np.round(np.maximum(predicciones, 0))
 
 # Guardar datos actualizados en un nuevo archivo CSV
-octavos.to_csv("resultado_octavos_gaussiano.csv", index=False)
+octavos.to_csv("resultado_octavos2_gaussiano.csv", index=False)
