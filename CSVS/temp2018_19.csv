@@ -1,126 +1,126 @@
 idpartido, fase, equipo_local, equipo_visitante, goles_equipo_local, goles_equipo_visitante
-1,grupos,Inter,tottenham,2,1
-2,grupos,Barcelona,psv,4,0
-3,grupos,shalke,porto,1,1
-4,grupos,mónaco,Atletico Madrid,1,2
-5,grupos,liverpool,PSG,3,2
-6,grupos,galatasaray,lokomotiv,3,0
-7,grupos,estrella roja,nápoles,0,0
-8,grupos,brujas,Dortmund,0,1
-9,grupos,shakthar,hoffenheim,2,2
-10,grupos,ajax,aek,3,0
-11,grupos,young boys,manchester united,0,3
-12,grupos,valencia,juventus,0,2
-13,grupos,Real Madrid,roma,3,0
-14,grupos,plzen,cska moscu,2,2
-15,grupos,Manchester City,lyon,1,2
-16,grupos,benfica,Bayern,0,2
-17,grupos,juventus,young boys,3,0
-18,grupos,hoffenheim,Manchester City,1,2
-19,grupos,roma,plzen,5,0
-20,grupos,manchester united,valencia,0,0
-21,grupos,lyon,shakthar,2,2
-22,grupos,cska moscu,Real Madrid,1,0
-23,grupos,Bayern,ajax,1,1
-24,grupos,aek,benfica,2,3
-25,grupos,PSG,estrella roja,6,1
-26,grupos,lokomotiv,schalke,0,1
-27,grupos,tottenham,Barcelona,2,4
-28,grupos,psv,Inter,1,2
-29,grupos,porto,galatasaray,1,0
-30,grupos,nápoles,liverpool,1,0
-31,grupos,Dortmund,mÓnaco,3,0
-32,grupos,Atletico Madrid,brujas,3,1
-33,grupos,young boys,valencia,1,1
-34,grupos,aek,Bayern,0,2
-35,grupos,shakthar,Manchester City,0,3
-36,grupos,roma,cska moscu,3,0
-37,grupos,Real Madrid,plzen,2,1
-38,grupos,manchester united,juventus,0,1
-39,grupos,hoffenheim,lyon,3,3
-40,grupos,ajax,benfica,1,0
-41,grupos,psv,tottenham,2,2
-42,grupos,brujas,mónaco,1,1
-43,grupos,PSG,nápoles,2,2
-44,grupos,lokomotiv,porto,1,3
-45,grupos,liverpool,estrella roja,4,0
-46,grupos,galatasaray,schalke,0,0
-47,grupos,Dortmund,Atletico Madrid,4,0
-48,grupos,Barcelona,Inter,2,0
-49,grupos,mónaco,brujas,0,4
-50,grupos,estrella roja,liverpool,2,0
-51,grupos,tottenham,psv,2,1
-52,grupos,schalke,galatasaray,2,0
-53,grupos,porto,lokomotiv,4,1
-54,grupos,nápoles,PSG,1,1
-55,grupos,Inter,Barcelona,1,1
-56,grupos,Atletico Madrid,Dortmund,2,0
-57,grupos,valencia,young boys,3,1
-58,grupos,cska moscu,roma,1,2   
-59,grupos,plzen,Real Madrid,0,5
-60,grupos,Manchester City,shakthar,6,0
-61,grupos,lyon,hoffenheim,2,2
-62,grupos,juventus,manchester united,1,2
-63,grupos,benfica,ajax,1,1
-64,grupos,Bayern,aek,5,1
-65,grupos,cska moscu,plzen,1,2
-66,grupos,aek,ajax,0,2
-67,grupos,roma,Real Madrid,0,2
-68,grupos,manchester united,young boys,1,0
-69,grupos,lyon,Manchester City,2,2
-70,grupos,juventus,valencia,1,0
-71,grupos,hoffenheim,shakthar,2,3
-72,grupos,Bayern,benfica,5,1
-73,grupos,lokomotiv,galatasaray,2,0
-74,grupos,Atletico Madrid,monaco,2,0
-75,grupos,tottenham,Inter,1,0
-76,grupos,psv,Barcelona,1,2
-77,grupos,PSG,liverpool,2,1
-78,grupos,porto,schalke,3,1
-79,grupos,nápoles,estrella roja,3,1
-80,grupos,Dortmund,brujas,0,0
-81,grupos,schalke,lokomotiv,1,0
-82,grupos,galatasaray,Porto,2,3
-83,grupos,monaco,Dortmund,0,2
-84,grupos,liverpool,nápoles,1,0
-85,grupos,Inter,psv,1,1
-86,grupos,estrella roja,PSG,1,4
-87,grupos,brujas,Atletico Madrid,0,0
-88,grupos,Barcelona,tottenham,1,1
-89,grupos,Real Madrid,cska moscu,0,3
-90,grupos,plzen,roma,2,1
-91,grupos,young boys,juventus,2,1
-92,grupos,valencia,manchester united,2,1
-93,grupos,shakthar,lyon,1,1
-94,grupos,Manchester City,hoffenheim,2,1
-95,grupos,benfica,aek,1,0
-96,grupos,ajax,Bayern,3,3
-97,octavos,roma,Porto,2,1
-98,octavos,manchester united,PSG,0,2
-99,octavos,tottenham,Dortmund,3,0
-100,octavos,ajax,Real Madrid,1,2
-101,octavos,lyon,Barcelona,0,0
-102,octavos,liverpool,Bayern,0,0
-103,octavos,schalke,Manchester City,2,3
-104,octavos,Atletico Madrid,juventus,2,0
-105,octavos,Real Madrid,ajax,1,4
-106,octavos,Dortmund,tottenham,0,1
-107,octavos,PSG,manchester united,1,3
-108,octavos,Porto,roma,3,1
-109,octavos,Manchester City,schalke,7,0
-110,octavos,juventus,Atletico Madrid,3,0
-111,octavos,Bayern,liverpool,1,3
-112,octavos,Barcelona,lyon,5,1
-113,cuartos,liverpool,Porto,2,0
-114,cuartos,tottenham,Manchester City,1,0
-115,cuartos,Barcelona,manchester united,0,1
-116,cuartos,ajax,juventus,1,1
-117,cuartos,juventus,ajax,1,2
-118,cuartos,Barcelona,manchester united,3,0
-119,cuartos,porto,liverpool,1,4
-120,cuartos,Manchester City,tottenham,4,3
-121,semifinal,tottenham,ajax,0,1
-122,semifinal,Barcelona,liverpool,3,0
-123,semifinal,liverpool,Barcelona,4,0
-124,semifinal,ajax,tottenham,2,3
-125,final,liverpool,tottenham,2,0
+1,Grupos,Inter,tottenham,2,1
+2,Grupos,Barcelona,psv,4,0
+3,Grupos,shalke,porto,1,1
+4,Grupos,mónaco,Atletico Madrid,1,2
+5,Grupos,liverpool,PSG,3,2
+6,Grupos,galatasaray,lokomotiv,3,0
+7,Grupos,estrella roja,nápoles,0,0
+8,Grupos,brujas,Dortmund,0,1
+9,Grupos,shakthar,hoffenheim,2,2
+10,Grupos,ajax,aek,3,0
+11,Grupos,young boys,manchester united,0,3
+12,Grupos,valencia,juventus,0,2
+13,Grupos,Real Madrid,roma,3,0
+14,Grupos,plzen,cska moscu,2,2
+15,Grupos,Manchester City,lyon,1,2
+16,Grupos,benfica,Bayern,0,2
+17,Grupos,juventus,young boys,3,0
+18,Grupos,hoffenheim,Manchester City,1,2
+19,Grupos,roma,plzen,5,0
+20,Grupos,manchester united,valencia,0,0
+21,Grupos,lyon,shakthar,2,2
+22,Grupos,cska moscu,Real Madrid,1,0
+23,Grupos,Bayern,ajax,1,1
+24,Grupos,aek,benfica,2,3
+25,Grupos,PSG,estrella roja,6,1
+26,Grupos,lokomotiv,schalke,0,1
+27,Grupos,tottenham,Barcelona,2,4
+28,Grupos,psv,Inter,1,2
+29,Grupos,porto,galatasaray,1,0
+30,Grupos,nápoles,liverpool,1,0
+31,Grupos,Dortmund,mÓnaco,3,0
+32,Grupos,Atletico Madrid,brujas,3,1
+33,Grupos,young boys,valencia,1,1
+34,Grupos,aek,Bayern,0,2
+35,Grupos,shakthar,Manchester City,0,3
+36,Grupos,roma,cska moscu,3,0
+37,Grupos,Real Madrid,plzen,2,1
+38,Grupos,manchester united,juventus,0,1
+39,Grupos,hoffenheim,lyon,3,3
+40,Grupos,ajax,benfica,1,0
+41,Grupos,psv,tottenham,2,2
+42,Grupos,brujas,mónaco,1,1
+43,Grupos,PSG,nápoles,2,2
+44,Grupos,lokomotiv,porto,1,3
+45,Grupos,liverpool,estrella roja,4,0
+46,Grupos,galatasaray,schalke,0,0
+47,Grupos,Dortmund,Atletico Madrid,4,0
+48,Grupos,Barcelona,Inter,2,0
+49,Grupos,mónaco,brujas,0,4
+50,Grupos,estrella roja,liverpool,2,0
+51,Grupos,tottenham,psv,2,1
+52,Grupos,schalke,galatasaray,2,0
+53,Grupos,porto,lokomotiv,4,1
+54,Grupos,nápoles,PSG,1,1
+55,Grupos,Inter,Barcelona,1,1
+56,Grupos,Atletico Madrid,Dortmund,2,0
+57,Grupos,valencia,young boys,3,1
+58,Grupos,cska moscu,roma,1,2   
+59,Grupos,plzen,Real Madrid,0,5
+60,Grupos,Manchester City,shakthar,6,0
+61,Grupos,lyon,hoffenheim,2,2
+62,Grupos,juventus,manchester united,1,2
+63,Grupos,benfica,ajax,1,1
+64,Grupos,Bayern,aek,5,1
+65,Grupos,cska moscu,plzen,1,2
+66,Grupos,aek,ajax,0,2
+67,Grupos,roma,Real Madrid,0,2
+68,Grupos,manchester united,young boys,1,0
+69,Grupos,lyon,Manchester City,2,2
+70,Grupos,juventus,valencia,1,0
+71,Grupos,hoffenheim,shakthar,2,3
+72,Grupos,Bayern,benfica,5,1
+73,Grupos,lokomotiv,galatasaray,2,0
+74,Grupos,Atletico Madrid,monaco,2,0
+75,Grupos,tottenham,Inter,1,0
+76,Grupos,psv,Barcelona,1,2
+77,Grupos,PSG,liverpool,2,1
+78,Grupos,porto,schalke,3,1
+79,Grupos,nápoles,estrella roja,3,1
+80,Grupos,Dortmund,brujas,0,0
+81,Grupos,schalke,lokomotiv,1,0
+82,Grupos,galatasaray,Porto,2,3
+83,Grupos,monaco,Dortmund,0,2
+84,Grupos,liverpool,nápoles,1,0
+85,Grupos,Inter,psv,1,1
+86,Grupos,estrella roja,PSG,1,4
+87,Grupos,brujas,Atletico Madrid,0,0
+88,Grupos,Barcelona,tottenham,1,1
+89,Grupos,Real Madrid,cska moscu,0,3
+90,Grupos,plzen,roma,2,1
+91,Grupos,young boys,juventus,2,1
+92,Grupos,valencia,manchester united,2,1
+93,Grupos,shakthar,lyon,1,1
+94,Grupos,Manchester City,hoffenheim,2,1
+95,Grupos,benfica,aek,1,0
+96,Grupos,ajax,Bayern,3,3
+97,Octavos,roma,Porto,2,1
+98,Octavos,manchester united,PSG,0,2
+99,Octavos,tottenham,Dortmund,3,0
+100,Octavos,ajax,Real Madrid,1,2
+101,Octavos,lyon,Barcelona,0,0
+102,Octavos,liverpool,Bayern,0,0
+103,Octavos,schalke,Manchester City,2,3
+104,Octavos,Atletico Madrid,juventus,2,0
+105,Octavos,Real Madrid,ajax,1,4
+106,Octavos,Dortmund,tottenham,0,1
+107,Octavos,PSG,manchester united,1,3
+108,Octavos,Porto,roma,3,1
+109,Octavos,Manchester City,schalke,7,0
+110,Octavos,juventus,Atletico Madrid,3,0
+111,Octavos,Bayern,liverpool,1,3
+112,Octavos,Barcelona,lyon,5,1
+113,Cuartos,liverpool,Porto,2,0
+114,Cuartos,tottenham,Manchester City,1,0
+115,Cuartos,Barcelona,manchester united,0,1
+116,Cuartos,ajax,juventus,1,1
+117,Cuartos,juventus,ajax,1,2
+118,Cuartos,Barcelona,manchester united,3,0
+119,Cuartos,porto,liverpool,1,4
+120,Cuartos,Manchester City,tottenham,4,3
+121,Semifinal,tottenham,ajax,0,1
+122,Semifinal,Barcelona,liverpool,3,0
+123,Semifinal,liverpool,Barcelona,4,0
+124,Semifinal,ajax,tottenham,2,3
+125,Final,liverpool,tottenham,2,0

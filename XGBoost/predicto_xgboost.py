@@ -1,8 +1,7 @@
 import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error
+from xgboost import XGBRegressor
 import numpy as np
 
 # Obtener la lista de archivos CSV en la misma carpeta
@@ -31,8 +30,8 @@ X = pd.get_dummies(X)
 # Dividir datos en conjunto de entrenamiento y conjunto de prueba
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=50)
 
-# Entrenar el modelo de regresión lineal
-modelo = LinearRegression()
+# Entrenar el modelo XGBoost
+modelo = XGBRegressor()
 modelo.fit(X_train, y_train)
 
 # Leer eliminatoria actual
@@ -48,9 +47,8 @@ for col in X_octavos_encoded.columns:
 
 predicciones = modelo.predict(X_test_octavos)
 
-# Rellenar valores faltantes con las predicciones
 # Rellenar valores faltantes con las predicciones y asegurarse de que sean enteros y positivos
 octavos[['goles_equipo_local', 'goles_equipo_visitante']] = np.round(np.maximum(predicciones, 0))
 
 # Guardar datos actualizados en un nuevo archivo CSV
-octavos.to_csv("resultado_final_regre.csv", index=False)
+octavos.to_csv("resultado_final_xgboost.csv", index=False)

@@ -1,8 +1,8 @@
 import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error
+from sklearn.gaussian_process import GaussianProcessRegressor
+from sklearn.gaussian_process.kernels import RBF
 import numpy as np
 
 # Obtener la lista de archivos CSV en la misma carpeta
@@ -31,26 +31,22 @@ X = pd.get_dummies(X)
 # Dividir datos en conjunto de entrenamiento y conjunto de prueba
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=50)
 
-# Entrenar el modelo de regresión lineal
-modelo = LinearRegression()
+# Entrenar el modelo de regresión gaussiana
+kernel = 1.0 * RBF(length_scale=1.0)
+modelo = GaussianProcessRegressor(kernel=kernel, random_state=0)
 modelo.fit(X_train, y_train)
 
 # Leer eliminatoria actual
-octavos = pd.read_csv("Eliminatoria actual/final.csv")
+octavos = pd.read_csv("Eliminatoria actual/eliminatoria.csv")
 
 X_octavos = octavos[['fase', 'equipo_local', 'equipo_visitante']]
 X_octavos_encoded = pd.get_dummies(X_octavos)
 
-X_test_octavos = pd.DataFrame(columns=X_train.columns, data=np.zeros((X_octavos_encoded.shape[0], X_train.shape[1])))
-for col in X_octavos_encoded.columns:
-    if col in X_test_octavos.columns:
-        X_test_octavos[col] = X_octavos_encoded[col]
+# Realizar predicciones para los octavos de final
+predicciones = modelo.predict(X_octavos_encoded)
 
-predicciones = modelo.predict(X_test_octavos)
-
-# Rellenar valores faltantes con las predicciones
 # Rellenar valores faltantes con las predicciones y asegurarse de que sean enteros y positivos
 octavos[['goles_equipo_local', 'goles_equipo_visitante']] = np.round(np.maximum(predicciones, 0))
 
 # Guardar datos actualizados en un nuevo archivo CSV
-octavos.to_csv("resultado_final_regre.csv", index=False)
+octavos.to_csv("resultado_octavos_gaussiano.csv", index=False)
