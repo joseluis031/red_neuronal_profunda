@@ -16,56 +16,43 @@ def cargar_datos_desde_carpeta(ruta_carpeta):
 ruta_carpeta_partidos = 'CSVS'
 partidos_df = cargar_datos_desde_carpeta(ruta_carpeta_partidos)
 
-
-
-# Filtrar solo los partidos del Real Madrid
-partidos_real_madrid_df = partidos_df[(partidos_df['equipo_local'] == 'Real Madrid') | (partidos_df['equipo_visitante'] == 'Real Madrid')]
+# Filtrar los datos para incluir solo los partidos hasta la fase de cuartos de final
+partidos_hasta_cuartos_df = partidos_df[partidos_df['fase'] != 'Cuartos']
 
 # Función para simular un partido
-def simular_partido():
-    # Supongamos que el Real Madrid tiene un 80% de probabilidad de ganar, 10% de empatar y 10% de perder un partido
-    resultado = np.random.choice(['victoria', 'empate', 'derrota'], p=[0.8, 0.1, 0.1])
+def simular_partido(probabilidades):
+    resultado = np.random.choice(['victoria', 'empate', 'derrota'], p=probabilidades)
     return resultado
 
 # Simular múltiples temporadas
-num_simulaciones = 50
-victorias_simuladas = []
-empates_simulados = []
-derrotas_simuladas = []
+num_simulaciones = 1000
+victorias_simuladas = {}
 
 for _ in range(num_simulaciones):
-    victorias_temporada = 0
-    empates_temporada = 0
-    derrotas_temporada = 0
-    for _, partido in partidos_real_madrid_df.iterrows():
-        resultado = simular_partido()
-        if resultado == 'victoria' and (partido['equipo_local'] == 'Real Madrid' or partido['equipo_visitante'] == 'Real Madrid'):
-            victorias_temporada += 1
-        elif resultado == 'empate' and ('Real Madrid' in [partido['equipo_local'], partido['equipo_visitante']]):
-            empates_temporada += 1
-        elif resultado == 'derrota' and ('Real Madrid' in [partido['equipo_local'], partido['equipo_visitante']]):
-            derrotas_temporada += 1
-    victorias_simuladas.append(victorias_temporada)
-    empates_simulados.append(empates_temporada)
-    derrotas_simuladas.append(derrotas_temporada)
+    for fase in ['Cuartos', 'Semifinales', 'Final']:
+        partidos_fase_actual = partidos_df[partidos_df['fase'] == fase]
+        for _, partido in partidos_fase_actual.iterrows():
+            probabilidades_local = [partido['prob_victoria_local'], partido['prob_empate'], partido['prob_derrota_local']]
+            resultado_local = simular_partido(probabilidades_local)
+            if resultado_local == 'victoria':
+                if partido['equipo_local'] in victorias_simuladas:
+                    victorias_simuladas[partido['equipo_local']] += 1
+                else:
+                    victorias_simuladas[partido['equipo_local']] = 1
+            elif resultado_local == 'empate':
+                continue
+            else:
+                probabilidades_visitante = [partido['prob_derrota_visitante'], partido['prob_empate'], partido['prob_victoria_visitante']]
+                resultado_visitante = simular_partido(probabilidades_visitante)
+                if resultado_visitante == 'victoria':
+                    if partido['equipo_visitante'] in victorias_simuladas:
+                        victorias_simuladas[partido['equipo_visitante']] += 1
+                    else:
+                        victorias_simuladas[partido['equipo_visitante']] = 1
 
-# Calcular estadísticas de las simulaciones
-promedio_victorias = round(np.mean(victorias_simuladas))
-desviacion_estandar_victorias = (np.std(victorias_simuladas))
+# Identificar al equipo con más victorias simuladas
+ganador_simulado = max(victorias_simuladas, key=victorias_simuladas.get)
+victorias_totales_ganador = victorias_simuladas[ganador_simulado]
 
-promedio_empates = round(np.mean(empates_simulados))
-desviacion_estandar_empates = (np.std(empates_simulados))
-
-promedio_derrotas = round(np.mean(derrotas_simuladas))
-desviacion_estandar_derrotas = (np.std(derrotas_simuladas))
-
-
-
-print("Promedio de victorias:", promedio_victorias)
-print("Desviación estándar de victorias:", desviacion_estandar_victorias)
-
-print("Promedio de empates:", promedio_empates)
-print("Desviación estándar de empates:", desviacion_estandar_empates)
-
-print("Promedio de derrotas:", promedio_derrotas)
-print("Desviación estándar de derrotas:", desviacion_estandar_derrotas)
+print("El ganador simulado de la Liga de Campeones es:", ganador_simulado)
+print("Número total de victorias simuladas:", victorias_totales_ganador)

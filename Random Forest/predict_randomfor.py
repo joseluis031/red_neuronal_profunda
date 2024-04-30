@@ -7,7 +7,7 @@ import numpy as np
 
 # Obtener la lista de archivos CSV en la misma carpeta
 carpeta = "CSVS"
-archivos_csv = [os.path.join(carpeta, archivo) for archivo in os.listdir(carpeta) if archivo.endswith(".csv")]
+archivos_csv = [os.path.join(carpeta, archivo) for archivo in os.listdir(carpeta) if archivo.startswith("temp")]
 
 # Lista para almacenar cada DataFrame
 dataframes = []
