@@ -119,8 +119,8 @@ idpartido, fase, equipo_local, equipo_visitante, goles_equipo_local, goles_equip
 118,Cuartos,Barcelona,manchester united,3,0
 119,Cuartos,porto,liverpool,1,4
 120,Cuartos,Manchester City,tottenham,4,3
-121,Semifinal,tottenham,ajax,0,1
-122,Semifinal,Barcelona,liverpool,3,0
-123,Semifinal,liverpool,Barcelona,4,0
-124,Semifinal,ajax,tottenham,2,3
+121,Semifinales,tottenham,ajax,0,1
+122,Semifinales,Barcelona,liverpool,3,0
+123,Semifinales,liverpool,Barcelona,4,0
+124,Semifinales,ajax,tottenham,2,3
 125,Final,liverpool,tottenham,2,0

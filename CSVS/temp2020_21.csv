@@ -119,8 +119,8 @@ Cuartos,Chelsea,0,Porto,1
 Cuartos,PSG,0,Bayern,1
 Cuartos,Liverpool,0,Real Madrid,0
 Cuartos,Dortmund,1,Manchester City,2
-Semifinal,Real Madrid,1,Chelsea,1
-Semifinal,PSG,1,Manchester City,2
-Semifinal,Chelsea,2,Real Madrid,0
-Semifinal,Manchester City,2,PSG,0
+Semifinales,Real Madrid,1,Chelsea,1
+Semifinales,PSG,1,Manchester City,2
+Semifinales,Chelsea,2,Real Madrid,0
+Semifinales,Manchester City,2,PSG,0
 Final,Manchester City,0,Chelsea,1
