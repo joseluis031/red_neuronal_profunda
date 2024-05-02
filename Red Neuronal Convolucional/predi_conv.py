@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from keras.models import Sequential
-from keras.layers import Dense, Dropout
+from keras.layers import Conv1D, MaxPooling1D, Flatten, Dense, Dropout
 
 # Leer los datos de entrenamiento
 carpeta = "CSVS"
@@ -46,10 +46,17 @@ scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
-# Definir el modelo de red neuronal
+# Redimensionar datos para que se ajusten a la entrada de Conv1D
+X_train_reshaped = X_train_scaled.reshape(X_train_scaled.shape[0], X_train_scaled.shape[1], 1)
+X_test_reshaped = X_test_scaled.reshape(X_test_scaled.shape[0], X_test_scaled.shape[1], 1)
+
+# Definir el modelo de red neuronal convolucional
 model = Sequential([
-    Dense(64, activation='relu', input_shape=(X_train_scaled.shape[1],)),
-    Dropout(0.2),
+    Conv1D(64, 2, activation='relu', input_shape=(X_train_reshaped.shape[1], 1)),
+    MaxPooling1D(1),
+    Conv1D(64, 2, activation='relu'),
+    MaxPooling1D(1),
+    Flatten(),
     Dense(64, activation='relu'),
     Dropout(0.2),
     Dense(2)  # 2 neuronas de salida para predecir goles_equipo_local y goles_equipo_visitante
@@ -59,10 +66,10 @@ model = Sequential([
 model.compile(optimizer='adam', loss='mean_squared_error')
 
 # Entrenar el modelo
-history = model.fit(X_train_scaled, y_train, epochs=50, batch_size=32, validation_split=0.2)
+history = model.fit(X_train_reshaped, y_train, epochs=50, batch_size=32, validation_split=0.2)
 
 # Evaluar el modelo en el conjunto de prueba
-loss = model.evaluate(X_test_scaled, y_test)
+loss = model.evaluate(X_test_reshaped, y_test)
 print("Loss en conjunto de prueba:", loss)
 
 # Preparar datos de predicción
@@ -83,12 +90,14 @@ X_octavos_encoded = X_octavos_encoded[columnas_entrenamiento]
 
 # Escalar características de predicción
 X_octavos_scaled = scaler.transform(X_octavos_encoded)
+X_octavos_reshaped = X_octavos_scaled.reshape(X_octavos_scaled.shape[0], X_octavos_scaled.shape[1], 1)
+
 # Realizar predicciones
-predicciones = model.predict(X_octavos_scaled)
+predicciones = model.predict(X_octavos_reshaped)
 
 # Rellenar valores faltantes con las predicciones y asegurarse de que sean enteros y positivos
 octavos['goles_equipo_local'] = np.round(np.maximum(predicciones[:, 0], 0))
 octavos['goles_equipo_visitante'] = np.round(np.maximum(predicciones[:, 1], 0))
 
 # Guardar datos actualizados en un nuevo archivo CSV
-octavos.to_csv("Red Neuronal/Resultados/resultado_final_red_neuronal.csv", index=False)
+octavos.to_csv("Red Neuronal Convolucional/Resultados/resultado_final_cnn.csv", index=False)
