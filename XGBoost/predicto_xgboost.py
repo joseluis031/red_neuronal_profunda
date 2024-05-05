@@ -35,7 +35,7 @@ modelo = XGBRegressor()
 modelo.fit(X_train, y_train)
 
 # Leer eliminatoria actual
-octavos = pd.read_csv("Eliminatoria actual/final.csv")
+octavos = pd.read_csv("Eliminatoria actual/eliminatoria.csv")
 
 X_octavos = octavos[['fase', 'equipo_local', 'equipo_visitante']]
 X_octavos_encoded = pd.get_dummies(X_octavos)
@@ -51,4 +51,4 @@ predicciones = modelo.predict(X_test_octavos)
 octavos[['goles_equipo_local', 'goles_equipo_visitante']] = np.round(np.maximum(predicciones, 0))
 
 # Guardar datos actualizados en un nuevo archivo CSV
-octavos.to_csv("resultado_final_xgboost.csv", index=False)
+octavos.to_csv("resultado_octavos_xgboost.csv", index=False)

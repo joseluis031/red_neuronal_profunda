@@ -19,7 +19,7 @@ resultados = pd.concat(dataframes, ignore_index=True)
 resultados = resultados.dropna(subset=['goles_equipo_local', 'goles_equipo_visitante'])
 
 # Leer los datos de predicción
-octavos = pd.read_csv("Eliminatoria actual/final.csv")
+octavos = pd.read_csv("Eliminatoria actual/eliminatoria.csv")
 
 # Obtener una lista de todos los equipos presentes en los datos de entrenamiento y los datos de predicción
 equipos_entrenamiento = set(resultados['equipo_local']).union(set(resultados['equipo_visitante']))
