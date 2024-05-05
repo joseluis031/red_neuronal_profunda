@@ -3,10 +3,11 @@ from Escalado_CNN.scaler_CNN import *
 from Manejo_Datos_DNN.datos_CNN import *
 from Predecir_DNN.prediccion_DNN import *
 import numpy as np
+from Mediciones_DNN.metricas_DNN import *
 
 
 def main():
-    data_handler = DataHandler("CSVS", "Eliminatoria actual/semis.csv")
+    data_handler = DataHandler("CSVS", "Eliminatoria actual/eliminatoria.csv")
     
     # Cargar datos
     resultados = data_handler.cargar_datos_entrenamiento()
@@ -72,6 +73,15 @@ def main():
     
     # Guardar datos actualizados en un nuevo archivo CSV
     octavos.to_csv("Red Neuronal Profunda/Resultados/resultado_final3_red_neuronal.csv", index=False)
+    
+    # Calcular métricas
+    mse = Evaluator.calcular_mse(octavos[['goles_equipo_local', 'goles_equipo_visitante']], predicciones)
+    r_squared = Evaluator.calcular_r2_score(octavos[['goles_equipo_local', 'goles_equipo_visitante']], predicciones)
+    mae = Evaluator.calcular_mae(octavos[['goles_equipo_local', 'goles_equipo_visitante']], predicciones)
+
+    print("MSE:", mse)
+    print("R^2:", r_squared)
+    print("MAE:", mae)
 
 if __name__ == "__main__":
     main()
