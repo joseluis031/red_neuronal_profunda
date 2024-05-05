@@ -1,6 +1,7 @@
 from Manejo_Datos_REG.datos_REG import *
 from Predecir_REG.prediccion_Reg import *
 import numpy as np
+from Mediciones_REG.metricas_REG import *
 
 
 def main():
@@ -35,6 +36,15 @@ def main():
 
     # Guardar resultados en un nuevo archivo CSV
     DataManager.guardar_resultados(octavos, "resultado_final_regre.csv")
+    
+    # Calcular métricas de evaluación
+    mse = Evaluator.calcular_mse(octavos[['goles_equipo_local', 'goles_equipo_visitante']], predicciones)
+    r_squared = Evaluator.calcular_r2_score(octavos[['goles_equipo_local', 'goles_equipo_visitante']], predicciones)
+    mae = Evaluator.calcular_mae(octavos[['goles_equipo_local', 'goles_equipo_visitante']], predicciones)
+    
+    print("MSE:", mse)
+    print("R^2:", r_squared)
+    print("MAE:", mae)
 
 if __name__ == "__main__":
     main()

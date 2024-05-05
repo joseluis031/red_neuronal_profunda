@@ -1,6 +1,7 @@
 
 from Predecir_XGB.prediccion_XGB import *
 from Manejo_datos_XGB.datos_XGB import *
+from Mediciones_XGB.metricas_XGB import *
 
 
 def main():
@@ -16,6 +17,20 @@ def main():
     # Entrenar el modelo
     predictor.entrenar_modelo(X_train, y_train)
     
+    # Realizar predicciones
+    predicciones = predictor.predecir(X_test)
+    
+    # Calcular métricas utilizando la clase Evaluator
+    mse = Evaluator.calcular_mse(y_test, predicciones)
+    r_squared = Evaluator.calcular_r2_score(y_test, predicciones)
+    mae = Evaluator.calcular_mae(y_test, predicciones)
+    accuracy_score = Evaluator.calcular_accuracy(y_test, predicciones)
+    
+    print("MSE:", mse)
+    print("R^2:", r_squared)
+    print("MAE:", mae)
+    print("Accuracy Score:", accuracy_score)
+    
     # Cargar datos de la eliminatoria actual
     octavos = data_manager.cargar_eliminatoria("Eliminatoria actual/eliminatoria.csv")
     
@@ -28,13 +43,22 @@ def main():
         if col in X_test_octavos.columns:
             X_test_octavos[col] = X_octavos_encoded[col]
     
-    predicciones = predictor.predecir(X_test_octavos)
+    predicciones_octavos = predictor.predecir(X_test_octavos)
     
     # Rellenar valores faltantes con las predicciones y asegurarse de que sean enteros y positivos
-    octavos[['goles_equipo_local', 'goles_equipo_visitante']] = np.round(np.maximum(predicciones, 0))
+    octavos[['goles_equipo_local', 'goles_equipo_visitante']] = np.round(np.maximum(predicciones_octavos, 0))
     
     # Guardar resultados en un nuevo archivo CSV
     data_manager.guardar_resultados(octavos, "resultado_octavos_xgboost.csv")
 
+    # Calcular métricas para las predicciones de los octavos de final
+    mse_octavos = Evaluator.calcular_mse(octavos[['goles_equipo_local', 'goles_equipo_visitante']], predicciones_octavos)
+    r_squared_octavos = Evaluator.calcular_r2_score(octavos[['goles_equipo_local', 'goles_equipo_visitante']], predicciones_octavos)
+    mae_octavos = Evaluator.calcular_mae(octavos[['goles_equipo_local', 'goles_equipo_visitante']], predicciones_octavos)
+    
+    print("MSE para octavos de final:", mse_octavos)
+    print("R^2 para octavos de final:", r_squared_octavos)
+    print("MAE para octavos de final:", mae_octavos)
+    
 if __name__ == "__main__":
     main()

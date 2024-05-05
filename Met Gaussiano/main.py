@@ -2,15 +2,16 @@ from Manejo_Datos_Gaussiano.datos_Gaussiana import *
 from Predecir_Gaussiana.prediccion_Gaussiana import *
 from sklearn.model_selection import train_test_split
 import numpy as np
+from Mediciones_Gaussiana.metricas_Gaussiana import *
 
 
 def main():
-    data_handler = DataHandler("CSVS", "Eliminatoria actual/final.csv")
+    data_handler = DataHandler("CSVS", "Eliminatoria actual/eliminatoria.csv")
     
     # Cargar datos
     resultados = data_handler.cargar_datos_entrenamiento()
-    octavos = data_handler.cargar_datos_eliminacion("Eliminatoria actual/eliminatoria.csv")
-    
+    octavos = data_handler.cargar_datos_eliminacion()
+
     # Dividir el conjunto de datos en características (X) y etiquetas (y)
     X = resultados[['fase', 'equipo_local', 'equipo_visitante']]
     y = resultados[['goles_equipo_local', 'goles_equipo_visitante']]
@@ -41,6 +42,15 @@ def main():
     
     # Guardar datos actualizados en un nuevo archivo CSV
     octavos.to_csv("resultado_final_gaussiano.csv", index=False)
+    
+    # Calcular métricas
+    mse = Evaluator.calcular_mse(octavos[['goles_equipo_local', 'goles_equipo_visitante']], predicciones)
+    r_squared = Evaluator.calcular_r2_score(octavos[['goles_equipo_local', 'goles_equipo_visitante']], predicciones)
+    mae = Evaluator.calcular_mae(octavos[['goles_equipo_local', 'goles_equipo_visitante']], predicciones)
+
+    print("MSE:", mse)
+    print("R^2:", r_squared)
+    print("MAE:", mae)
 
 if __name__ == "__main__":
     main()

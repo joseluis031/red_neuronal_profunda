@@ -14,5 +14,5 @@ class DataHandler:
         resultados = resultados.dropna(subset=['goles_equipo_local', 'goles_equipo_visitante'])
         return resultados
     
-    def cargar_datos_eliminacion(self, archivo):
-        return pd.read_csv(archivo)
+    def cargar_datos_eliminacion(self):
+        return pd.read_csv(self.archivo_eliminacion)
