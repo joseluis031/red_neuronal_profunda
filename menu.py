@@ -373,8 +373,75 @@ def menu():
                         
                     
                 elif eleccion_comp == "3":
-                    print("Has elegido la comparativa Barcelona vs Bayern mediante series temporales:")
-                    print("¿Qué deseas visualizar?")
+                    while True:
+                        print("Has elegido la comparativa Barcelona vs Bayern mediante series temporales:")
+                        print("¿Qué deseas visualizar(recomendacion por orden)?")
+                        print("1. Prediccion de goles del Barcelona vs Bayern en la ultima temporada vs la realidad"
+                            "\n utilizando ARIMA")
+                        print("2. Prediccion de goles del Barcelona vs Bayern en la ultima temporada vs la realidad"
+                            "\n utilizando ARIMA ajustado")
+                        print("3. Prediccion de goles del Barcelona vs Bayern en la ultima temporada vs la realidad"
+                            "\n utilizando Arima y Multivariable con Random Forest para REDUCIR ERROR")
+                        print("4. Volver al menú principal")
+                        print("------------------------------------")
+                        eleccion_comp_serie = input("Escribe el número de la opción que deseas visualizar: ")
+                        print("------------------------------------")
+                        if eleccion_comp_serie == "1":
+                            print("Has elegido la primera predicción:")
+                            print("Cargando...")
+                            # Ruta de la imagen
+                            ruta_imagen = "ARIMA_comparar_images/pred_ult_tempBarsa.png"
+                            ruta_imagen2 = "ARIMA_comparar_images/pred_ult_tempBayern.png"
+
+                            # Cargar la imagen
+                            imagen = mpimg.imread(ruta_imagen)
+                            imagen2 = mpimg.imread(ruta_imagen2)
+
+                            # Mostrar la imagen
+                            plt.imshow(imagen)
+                            plt.axis('off')  
+                            plt.show()
+                            plt.imshow(imagen2)
+                            plt.axis('off')
+                            plt.show()
+
+                            
+                        elif eleccion_comp_serie == "2":
+                            print("Has elegido la comparativa mediante ARIMA ajustado:")
+                            print("Cargando...")
+                            # Ruta de la imagen
+                            ruta_imagen = "ARIMA_comparar_images/ajuste_arima.png"
+
+                            # Cargar la imagen
+                            imagen = mpimg.imread(ruta_imagen)
+
+                            # Mostrar la imagen
+                            plt.imshow(imagen)
+                            plt.axis('off')  
+                            plt.show()
+                            
+                        elif eleccion_comp_serie == "3":
+                            print("Has elegido la comparativa mediante ARIMA y Random Forest:")
+                            print("Cargando...")
+                            # Ruta de la imagen
+                            ruta_imagen = "ARIMA_comparar_images/multv_RF.png"
+
+                            # Cargar la imagen
+                            imagen = mpimg.imread(ruta_imagen)
+
+                            # Mostrar la imagen
+                            plt.imshow(imagen)
+                            plt.axis('off')  
+                            plt.show()
+                        
+                        elif eleccion_comp_serie == "4":
+                            print("Volviendo al menú principal...")
+                            break
+                        else:
+                            print("Opción no válida. Inténtalo de nuevo.")
+                            print("------------------------------------")
+                            sleep(1.5)
+                            continue
                     
                     
                 elif eleccion_comp == "4":
