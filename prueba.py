@@ -21,6 +21,6 @@ def extract_images_from_notebook(notebook_path, output_dir):
                         img_file.write(image_data_decoded)
 
 if __name__ == "__main__":
-    notebook_path = "clustering.ipynb"
-    output_directory = "clustering_images"
+    notebook_path = "analisis_grafico.ipynb"
+    output_directory = "analisis_grafico_images"
     extract_images_from_notebook(notebook_path, output_directory)

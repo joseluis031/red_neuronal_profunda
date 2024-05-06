@@ -7,15 +7,20 @@ def menu():
             print("Que deseas realizar/visualizar?")
             print("1. Predicciones del torneo(Regresion, Redes Neuronales, XGBoost, Random Forest, Metodo Gaussiano etc.)")
             print("2. Clustering de los equipos que estan en octavos de final")
-            print("3. Comparativas entre equipos(Gráficas, estadísticas, series temporales, etc.)")
-            print("4. MonteCarlo")
-            print("5. Salir")
+            print("3. Comparativas entre equipos(Gráficas, estadísticas, ARIMA, etc.)")
+            print("4. Series temporales")
+            print("5. MonteCarlo")
+            print("6. Salir")
             print("------------------------------------")
             eleccion = input("Escribe el número de la opción que deseas realizar: ")
             print("------------------------------------")
             return eleccion
         eleccion = menu_champs()
-
+        
+        from time import sleep
+        import matplotlib.pyplot as plt
+        import matplotlib.image as mpimg
+            
         if eleccion == "1":
             while True:
                 print("Debes seleccionar el modelo de predicción que deseas utilizar: ")
@@ -77,13 +82,13 @@ def menu():
                 else:
                     print("Opción no válida. Inténtalo de nuevo.")
                     print("------------------------------------")
+                    sleep(1.5)
                     continue    
                 
                                 
             
         elif eleccion == "2":
-            import matplotlib.pyplot as plt
-            import matplotlib.image as mpimg
+            
 
             while True:
                 print("Debes seleccionar el modelo de clustering que deseas visualizar: ")
@@ -219,16 +224,185 @@ def menu():
                 else:
                     print("Opción no válida. Inténtalo de nuevo.")
                     print("------------------------------------")
+                    sleep(1.5)
                     continue
             
         elif eleccion == "3":
-            print("Opcion 3")
-            
+            while True:
+                print("Debes seleccionar el tipo de comparativa que deseas visualizar: ")
+                print("1. Real Madrid vs Resto de equipos(análisis gráfico)")
+                print("2. Estadísticas de los equipos en octavos de final")
+                print("3. Series temporales")
+                
+                print("4. Volver al menú principal")
+                print("------------------------------------")
+                eleccion_comp = input("Escribe el número de la opción que deseas visualizar: ")
+                print("------------------------------------")
+                if eleccion_comp == "1":
+                    while True:
+                        print("Has elegido la comparativa del Real Madrid VS Resto de equipos de octavos :")
+                        print("¿Qué deseas visualizar?")
+                        print("1. Gráfico de Densidad con la Comparacion de las victorias de las ultimas 10 temporadas"
+                            "\n del real madrid con la media de las victorias de los demas equipos")
+                        print("2. Gráfico de barras con la Comparacion de titulos UCL ganados "
+                            "\nel Real Madrid vs la suma de los titulos de todos los clasificados a octavos")
+                        print("3. Gráfica de barras con la Comparacion en goles"
+                            "\ndel real madrid vs la media de goles del resto de equipos")
+                        
+                        print("4. Volver al menú principal")
+                        print("------------------------------------")
+                        eleccion_comp_RM = input("Escribe el número de la opción que deseas visualizar: ")
+                        print("------------------------------------")
+                        if eleccion_comp_RM == "1":
+                            print("Has elegido la comparativa mediante gráfico de densidad:")
+                            print("Cargando...")
+                            # Ruta de la imagen
+                            ruta_imagen = "analisis_madrid_images/distr_vic_ult10_temp.png"
+
+                            # Cargar la imagen
+                            imagen = mpimg.imread(ruta_imagen)
+
+                            # Mostrar la imagen
+                            plt.imshow(imagen)
+                            plt.axis('off')  
+                            plt.show()
+                            
+                        elif eleccion_comp_RM == "2":
+                            print("Has elegido la comparativa de titulos UCL:")
+                            print("Cargando...")
+                            # Ruta de la imagen
+                            ruta_imagen = "analisis_madrid_images/titulos.png"
+
+                            # Cargar la imagen
+                            imagen = mpimg.imread(ruta_imagen)
+
+                            # Mostrar la imagen
+                            plt.imshow(imagen)
+                            plt.axis('off')  
+                            plt.show()
+                            
+                        elif eleccion_comp_RM == "3":
+                            print("Has elegido la comparativa en goles:")
+                            print("Cargando...")
+                            # Ruta de la imagen
+                            ruta_imagen = "analisis_madrid_images/goles_ult10_temp.png"
+
+                            # Cargar la imagen
+                            imagen = mpimg.imread(ruta_imagen)
+
+                            # Mostrar la imagen
+                            plt.imshow(imagen)
+                            plt.axis('off')  
+                            plt.show()
+                            
+                        elif eleccion_comp_RM == "4":
+                            print("Volviendo al menú principal...")
+                            break
+                        
+                        else:
+                            print("Opción no válida. Inténtalo de nuevo.")
+                            print("------------------------------------")
+                            sleep(1.5)
+                            continue
+                    
+                    
+                    
+                elif eleccion_comp == "2":
+                    while True:
+                        print("Has elegido las comparativas mediante estadísticas de los 8 equipos de octavos:")
+                        print("¿Qué deseas visualizar?")
+                        print("1. BoxPlot con las victorias y goles de los equipos")
+                        print("2. HeatMap para ver la correlacion entre las estadisticas de los equipos")
+                        print("3. ScatterPlot de las victorias de los equipos en los ult10 temp y el % de victorias"
+                              "\n de estos equipos en grupos ")
+                        print("4. Volver al menú principal")
+                        print("------------------------------------")
+                        eleccion_comp_oct = input("Escribe el número de la opción que deseas visualizar: ")
+                        print("------------------------------------")
+                        if eleccion_comp_oct == "1":
+                            print("Has elegido el análisis mediante BoxPlot:")
+                            print("Cargando...")
+                            # Ruta de la imagen
+                            ruta_imagen = "analisis_grafico_images/boxplot.png"
+
+                            # Cargar la imagen
+                            imagen = mpimg.imread(ruta_imagen)
+
+                            # Mostrar la imagen
+                            plt.imshow(imagen)
+                            plt.axis('off')  
+                            plt.show()
+                            
+                        elif eleccion_comp_oct == "2":
+                            print("Has elegido el análisis mediante HeatMap de la correlación:")
+                            print("Cargando...")
+                            # Ruta de la imagen
+                            ruta_imagen = "analisis_grafico_images/heatmap.png"
+
+                            # Cargar la imagen
+                            imagen = mpimg.imread(ruta_imagen)
+
+                            # Mostrar la imagen
+                            plt.imshow(imagen)
+                            plt.axis('off')  
+                            plt.show()
+                            
+                        elif eleccion_comp_oct == "3":
+                            print("Has elegido el análisis mediante ScatterPlot:")
+                            print("Cargando...")
+                            # Ruta de la imagen
+                            ruta_imagen = "analisis_grafico_images/Scatter.png"
+
+                            # Cargar la imagen
+                            imagen = mpimg.imread(ruta_imagen)
+
+                            # Mostrar la imagen
+                            plt.imshow(imagen)
+                            plt.axis('off')  
+                            plt.show()
+                        
+                        elif eleccion_comp_oct == "4":
+                            print("Volviendo al menú principal...")
+                            break
+                        else:
+                            print("Opción no válida. Inténtalo de nuevo.")
+                            print("------------------------------------")
+                            sleep(1.5)
+                            continue
+                        
+                        
+                    
+                elif eleccion_comp == "3":
+                    print("Has elegido las comparativas mediante series temporales:")
+                    print("Cargando...")
+                    # Ruta de la imagen
+                    ruta_imagen = "comparativas_images/series_temporales.png"
+
+                    # Cargar la imagen
+                    imagen = mpimg.imread(ruta_imagen)
+
+                    # Mostrar la imagen
+                    plt.imshow(imagen)
+                    plt.axis('off')  
+                    plt.show()
+                    
+                elif eleccion_comp == "4":
+                    print("Volviendo al menú principal...")
+                    break
+                else:
+                    print("Opción no válida. Inténtalo de nuevo.")
+                    print("------------------------------------")
+                    sleep(1.5)
+                    continue
+                
         elif eleccion == "4":
             print("Opcion 4")
-            
-            
+                        
         elif eleccion == "5":
+            print("Opcion 5")
+            
+            
+        elif eleccion == "6":
             print("Saliendo del programa...")
             break
         
