@@ -2,7 +2,8 @@
 from Predecir_XGB.prediccion_XGB import *
 from Manejo_datos_XGB.datos_XGB import *
 from Mediciones_XGB.metricas_XGB import *
-
+from PIL import Image, ImageTk
+import tkinter as tk
 
 def main():
     predictor = PredictorXGBoost()
@@ -48,8 +49,14 @@ def main():
     # Rellenar valores faltantes con las predicciones y asegurarse de que sean enteros y positivos
     octavos[['goles_equipo_local', 'goles_equipo_visitante']] = np.round(np.maximum(predicciones_octavos, 0))
     
+    
+    
+    
     # Guardar resultados en un nuevo archivo CSV
-    data_manager.guardar_resultados(octavos, "resultado_octavos_xgboost.csv")
+    #data_manager.guardar_resultados(octavos, "resultado_octavos_xgboost.csv")
+
+
+
 
     # Calcular métricas para las predicciones de los octavos de final
     mse_octavos = Evaluator.calcular_mse(octavos[['goles_equipo_local', 'goles_equipo_visitante']], predicciones_octavos)
@@ -60,5 +67,24 @@ def main():
     print("R^2 para octavos de final:", r_squared_octavos)
     print("MAE para octavos de final:", mae_octavos)
     
-if __name__ == "__main__":
-    main()
+    
+    
+        # Mostrar el drawio.png 
+    img = Image.open('XGBoost/eliminatoria_xgBoost.drawio.png')
+    # Crear una ventana Tkinter
+    root = tk.Tk()
+    root.title("Imagen")
+
+    # Convertir la imagen para Tkinter
+    img_tk = ImageTk.PhotoImage(img)
+
+    # Mostrar la imagen en un widget Label
+    label_img = tk.Label(root, image=img_tk)
+    label_img.pack()
+
+    # Centrar la ventana en la pantalla
+    root.eval('tk::PlaceWindow . center')
+
+    # Ejecutar el bucle principal de Tkinter
+    root.mainloop()
+

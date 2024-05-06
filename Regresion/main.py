@@ -1,10 +1,15 @@
-from Manejo_Datos_REG.datos_REG import *
-from Predecir_REG.prediccion_Reg import *
+from Regresion.Manejo_Datos_REG.datos_REG import *
+from Regresion.Predecir_REG.prediccion_Reg import *
+from Regresion.Mediciones_REG.metricas_REG import *
 import numpy as np
-from Mediciones_REG.metricas_REG import *
+from PIL import Image, ImageTk
+import tkinter as tk
 
 
-def main():
+
+
+def main_reg():
+
     # Cargar datos de entrenamiento
     X, y = DataManager.cargar_datos("CSVS")
 
@@ -34,8 +39,16 @@ def main():
     # Rellenar valores faltantes con las predicciones y asegurarse de que sean enteros y positivos
     octavos[['goles_equipo_local', 'goles_equipo_visitante']] = np.round(np.maximum(predicciones, 0))
 
+
+
+
+
     # Guardar resultados en un nuevo archivo CSV
-    DataManager.guardar_resultados(octavos, "resultado_final_regre.csv")
+    #DataManager.guardar_resultados(octavos, "resultado_final_regre.csv")
+    
+    
+    
+    
     
     # Calcular métricas de evaluación
     mse = Evaluator.calcular_mse(octavos[['goles_equipo_local', 'goles_equipo_visitante']], predicciones)
@@ -45,6 +58,27 @@ def main():
     print("MSE:", mse)
     print("R^2:", r_squared)
     print("MAE:", mae)
+    
+    
+    # Mostrar el drawio.png 
+    img = Image.open('Regresion/eliminatoria_regr.drawio.png')
+    # Crear una ventana Tkinter
+    root = tk.Tk()
+    root.title("Imagen")
 
-if __name__ == "__main__":
-    main()
+    # Convertir la imagen para Tkinter
+    img_tk = ImageTk.PhotoImage(img)
+
+    # Mostrar la imagen en un widget Label
+    label_img = tk.Label(root, image=img_tk)
+    label_img.pack()
+
+    # Centrar la ventana en la pantalla
+    root.eval('tk::PlaceWindow . center')
+
+    # Ejecutar el bucle principal de Tkinter
+    root.mainloop()
+    
+    
+
+

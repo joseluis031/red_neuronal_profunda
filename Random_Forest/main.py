@@ -6,7 +6,7 @@ from Mediciones_RF.metricas_RF import *
 
 
 
-def main():
+def main_rf():
     data_handler = DataHandler("CSVS", "Eliminatoria actual/eliminatoria.csv")
     
     # Cargar datos
@@ -41,7 +41,7 @@ def main():
     octavos[['goles_equipo_local', 'goles_equipo_visitante']] = np.round(predicciones)
     
     # Guardar datos actualizados en un nuevo archivo CSV
-    octavos.to_csv("resultado_octavos.csv", index=False)
+    #octavos.to_csv("resultado_octavos.csv", index=False)
     
     
     # Calcular métricas
@@ -53,5 +53,3 @@ def main():
     print("R^2:", r_squared)
     print("MAE:", mae)
 
-if __name__ == "__main__":
-    main()
