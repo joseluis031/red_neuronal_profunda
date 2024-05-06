@@ -1,11 +1,11 @@
 
-from Predecir_XGB.prediccion_XGB import *
-from Manejo_datos_XGB.datos_XGB import *
-from Mediciones_XGB.metricas_XGB import *
+from XGBoost.Predecir_XGB.prediccion_XGB import *
+from XGBoost.Manejo_datos_XGB.datos_XGB import *
+from XGBoost.Mediciones_XGB.metricas_XGB import *
 from PIL import Image, ImageTk
 import tkinter as tk
 
-def main():
+def main_XGB():
     predictor = PredictorXGBoost()
     data_manager = DataManager()
     
@@ -21,16 +21,7 @@ def main():
     # Realizar predicciones
     predicciones = predictor.predecir(X_test)
     
-    # Calcular métricas utilizando la clase Evaluator
-    mse = Evaluator.calcular_mse(y_test, predicciones)
-    r_squared = Evaluator.calcular_r2_score(y_test, predicciones)
-    mae = Evaluator.calcular_mae(y_test, predicciones)
-    accuracy_score = Evaluator.calcular_accuracy(y_test, predicciones)
-    
-    print("MSE:", mse)
-    print("R^2:", r_squared)
-    print("MAE:", mae)
-    print("Accuracy Score:", accuracy_score)
+
     
     # Cargar datos de la eliminatoria actual
     octavos = data_manager.cargar_eliminatoria("Eliminatoria actual/eliminatoria.csv")

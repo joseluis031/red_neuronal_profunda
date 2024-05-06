@@ -36,18 +36,41 @@ def menu():
                     print("Aqui tienes algunas métricas del modelo:")
                     main_reg()                  
                     
-                    exit()
                 elif eleccion_pred == "2":
+                    from Red_Neuronal_Profunda.main import main_DNN
                     
-                    print("Opcion 2")
+                    print("Has elegido la prediccion mediante Red Neuronal Profunda:")
+                    print("Aqui tienes algunas métricas del modelo:")
+                    main_DNN()
+                    
                 elif eleccion_pred == "3":
-                    print("Opcion 3")
+                    from Red_Neuronal_Convolucional.main import main_CNN
+
+                    print("Has elegido la prediccion mediante Red Neuronal Convolucional:") 
+                    print("Aqui tienes algunas métricas del modelo:")
+                    main_CNN()
+
                 elif eleccion_pred == "4":
-                    print("Opcion 4")
+                    from XGBoost.main import main_XGB
+                    
+                    print("Has elegido la prediccion mediante XGBoost:")
+                    print("Aqui tienes algunas métricas del modelo:")
+                    main_XGB()
+                    
                 elif eleccion_pred == "5":
-                    print("Opcion 5")
+                    from Random_Forest.main import main_rf
+                    
+                    print("Has elegido la prediccion mediante Random Forest:")
+                    print("Aqui tienes algunas métricas del modelo:")
+                    main_rf()
+                    
                 elif eleccion_pred == "6":
-                    print("Opcion 6")
+                    from Met_Gaussiano.main import main_GS
+                    
+                    print("Has elegido la prediccion mediante Método Gaussiano:")
+                    print("Aqui tienes algunas métricas del modelo:")
+                    main_GS()
+                    
                 elif eleccion_pred == "7":
                     print("Volviendo al menú principal...")
                     break

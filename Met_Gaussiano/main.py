@@ -1,11 +1,12 @@
-from Manejo_Datos_Gaussiano.datos_Gaussiana import *
-from Predecir_Gaussiana.prediccion_Gaussiana import *
+from Met_Gaussiano.Manejo_Datos_Gaussiano.datos_Gaussiana import *
+from Met_Gaussiano.Predecir_Gaussiana.prediccion_Gaussiana import *
 from sklearn.model_selection import train_test_split
 import numpy as np
-from Mediciones_Gaussiana.metricas_Gaussiana import *
+from Met_Gaussiano.Mediciones_Gaussiana.metricas_Gaussiana import *
+from PIL import Image, ImageTk
+import tkinter as tk
 
-
-def main():
+def main_GS():
     data_handler = DataHandler("CSVS", "Eliminatoria actual/eliminatoria.csv")
     
     # Cargar datos
@@ -40,8 +41,14 @@ def main():
     # Rellenar valores faltantes con las predicciones y asegurarse de que sean enteros y positivos
     octavos[['goles_equipo_local', 'goles_equipo_visitante']] = np.round(np.maximum(predicciones, 0))
     
+    
+    
+    
     # Guardar datos actualizados en un nuevo archivo CSV
-    octavos.to_csv("resultado_final_gaussiano.csv", index=False)
+    #octavos.to_csv("resultado_final_gaussiano.csv", index=False)
+    
+    
+    
     
     # Calcular métricas
     mse = Evaluator.calcular_mse(octavos[['goles_equipo_local', 'goles_equipo_visitante']], predicciones)
@@ -51,6 +58,25 @@ def main():
     print("MSE:", mse)
     print("R^2:", r_squared)
     print("MAE:", mae)
+    
+    
+    # Mostrar el drawio.png 
+    img = Image.open('Met_Gaussiano/eliminatoria1.drawio.png')
+    # Crear una ventana Tkinter
+    root = tk.Tk()
+    root.title("Imagen")
 
-if __name__ == "__main__":
-    main()
+    # Convertir la imagen para Tkinter
+    img_tk = ImageTk.PhotoImage(img)
+
+    # Mostrar la imagen en un widget Label
+    label_img = tk.Label(root, image=img_tk)
+    label_img.pack()
+
+    # Centrar la ventana en la pantalla
+    root.eval('tk::PlaceWindow . center')
+
+    # Ejecutar el bucle principal de Tkinter
+    root.mainloop()
+
+

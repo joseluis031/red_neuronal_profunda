@@ -1,13 +1,15 @@
-from Escalado_CNN.scaler_CNN import *
-from Manejo_Datos_CNN.datos_CNN import *
-from Predecir_CNN.prediccion_CNN import *
+from Red_Neuronal_Convolucional.Escalado_CNN.scaler_CNN import *
+from Red_Neuronal_Convolucional.Manejo_Datos_CNN.datos_CNN import *
+from Red_Neuronal_Convolucional.Predecir_CNN.prediccion_CNN import *
 from sklearn.model_selection import train_test_split
 import numpy as np
-from Mediciones_CNN.metricas_CNN import *
+from Red_Neuronal_Convolucional.Mediciones_CNN.metricas_CNN import *
+from PIL import Image, ImageTk
+import tkinter as tk
 
 
 
-def main():
+def main_CNN():
     data_handler = DataHandler("CSVS", "Eliminatoria actual/eliminatoria.csv")
     
     # Cargar datos
@@ -77,8 +79,14 @@ def main():
     octavos['goles_equipo_local'] = np.round(np.maximum(predicciones[:, 0], 0))
     octavos['goles_equipo_visitante'] = np.round(np.maximum(predicciones[:, 1], 0))
     
+    
+    
+    
     # Guardar datos actualizados en un nuevo archivo CSV
-    octavos.to_csv("Red Neuronal Convolucional/Resultados/resultado_final4_cnn.csv", index=False)
+    #octavos.to_csv("Red Neuronal Convolucional/Resultados/resultado_final4_cnn.csv", index=False)
+    
+    
+    
     
     # Calcular métricas
     mse = Evaluator.calcular_mse(octavos[['goles_equipo_local', 'goles_equipo_visitante']], predicciones)
@@ -89,5 +97,21 @@ def main():
     print("R^2:", r_squared)
     print("MAE:", mae)
 
-if __name__ == "__main__":
-    main()
+    # Mostrar el drawio.png 
+    img = Image.open('Red_neuronal_Convolucional/eliminatoria_red_neuronal_conv.drawio.png')
+    # Crear una ventana Tkinter
+    root = tk.Tk()
+    root.title("Imagen")
+
+    # Convertir la imagen para Tkinter
+    img_tk = ImageTk.PhotoImage(img)
+
+    # Mostrar la imagen en un widget Label
+    label_img = tk.Label(root, image=img_tk)
+    label_img.pack()
+
+    # Centrar la ventana en la pantalla
+    root.eval('tk::PlaceWindow . center')
+
+    # Ejecutar el bucle principal de Tkinter
+    root.mainloop()

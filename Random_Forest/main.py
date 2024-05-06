@@ -1,9 +1,10 @@
-from Manejo_Datos_RF.datos_RF import *
-from Predecir_RF.prediccion_RF import *
+from Random_Forest.Manejo_Datos_RF.datos_RF import *
+from Random_Forest.Predecir_RF.prediccion_RF import *
 from sklearn.model_selection import train_test_split
 import numpy as np
-from Mediciones_RF.metricas_RF import *
-
+from Random_Forest.Mediciones_RF.metricas_RF import *
+from PIL import Image, ImageTk
+import tkinter as tk
 
 
 def main_rf():
@@ -40,8 +41,11 @@ def main_rf():
     # Rellenar valores faltantes con las predicciones y asegurarse de que sean enteros y positivos
     octavos[['goles_equipo_local', 'goles_equipo_visitante']] = np.round(predicciones)
     
+    
+    
     # Guardar datos actualizados en un nuevo archivo CSV
     #octavos.to_csv("resultado_octavos.csv", index=False)
+    
     
     
     # Calcular métricas
@@ -52,4 +56,23 @@ def main_rf():
     print("MSE:", mse)
     print("R^2:", r_squared)
     print("MAE:", mae)
+    
+    # Mostrar el drawio.png 
+    img = Image.open('Random_Forest/eliminatoria_random_forest.drawio.png')
+    # Crear una ventana Tkinter
+    root = tk.Tk()
+    root.title("Imagen")
+
+    # Convertir la imagen para Tkinter
+    img_tk = ImageTk.PhotoImage(img)
+
+    # Mostrar la imagen en un widget Label
+    label_img = tk.Label(root, image=img_tk)
+    label_img.pack()
+
+    # Centrar la ventana en la pantalla
+    root.eval('tk::PlaceWindow . center')
+
+    # Ejecutar el bucle principal de Tkinter
+    root.mainloop()
 
