@@ -82,7 +82,144 @@ def menu():
                                 
             
         elif eleccion == "2":
-            print("Opcion 2")
+            import matplotlib.pyplot as plt
+            import matplotlib.image as mpimg
+
+            while True:
+                print("Debes seleccionar el modelo de clustering que deseas visualizar: ")
+                print("1. K-Means")
+                print("2. Mean-Shift")
+                print("3. Mini-Batch K-Means")
+                print("4. DBSCAN")
+                print("5. OPTICS")
+                print("6. GMM")
+                print("7. Hierarchical")
+                print("8. Dendrograma con AgglomerativeClustering")
+                print("9. Volver al menú principal")
+                print("------------------------------------")
+                eleccion_clust = input("Escribe el número de la opción que deseas visualizar: ")
+                print("------------------------------------")
+                if eleccion_clust == "1":
+                    
+                    print("Has elegido el clustering mediante K-Means:")
+                    print("Cargando...")
+                    # Ruta de la imagen
+                    ruta_imagen = "clustering_images/K-Means.png"
+
+                    # Cargar la imagen
+                    imagen = mpimg.imread(ruta_imagen)
+
+                    # Mostrar la imagen
+                    plt.imshow(imagen)
+                    plt.axis('off')  
+                    plt.show()
+
+                    
+                elif eleccion_clust == "2":
+                    print("Has elegido el clustering mediante Mean-Shift:")
+                    print("Cargando...")
+                    # Ruta de la imagen
+                    ruta_imagen = "clustering_images/Mean-Shift.png"
+
+                    # Cargar la imagen
+                    imagen = mpimg.imread(ruta_imagen)
+
+                    # Mostrar la imagen
+                    plt.imshow(imagen)
+                    plt.axis('off')  
+                    plt.show()
+                    
+                elif eleccion_clust == "3":
+                    print("Has elegido el clustering mediante Mini-Batch K-Means:")
+                    print("Cargando...")
+                    # Ruta de la imagen
+                    ruta_imagen = "clustering_images/Mini-Batch K-Means.png"
+
+                    # Cargar la imagen
+                    imagen = mpimg.imread(ruta_imagen)
+
+                    # Mostrar la imagen
+                    plt.imshow(imagen)
+                    plt.axis('off')  
+                    plt.show()
+                    
+                elif eleccion_clust == "4":
+                    print("Has elegido el clustering mediante DBSCAN:")
+                    print("Cargando...")
+                    # Ruta de la imagen
+                    ruta_imagen = "clustering_images/DBSCAN.png"
+
+                    # Cargar la imagen
+                    imagen = mpimg.imread(ruta_imagen)
+
+                    # Mostrar la imagen
+                    plt.imshow(imagen)
+                    plt.axis('off')  
+                    plt.show()
+                    
+                elif eleccion_clust == "5":
+                    print("Has elegido el clustering mediante OPTICS:")
+                    print("Cargando...")
+                    # Ruta de la imagen
+                    ruta_imagen = "clustering_images/OPTICS.png"
+
+                    # Cargar la imagen
+                    imagen = mpimg.imread(ruta_imagen)
+
+                    # Mostrar la imagen
+                    plt.imshow(imagen)
+                    plt.axis('off')  
+                    plt.show()
+                    
+                elif eleccion_clust == "6":
+                    print("Has elegido el clustering mediante GMM:")
+                    print("Cargando...")
+                    # Ruta de la imagen
+                    ruta_imagen = "clustering_images/GMM.png"
+
+                    # Cargar la imagen
+                    imagen = mpimg.imread(ruta_imagen)
+
+                    # Mostrar la imagen
+                    plt.imshow(imagen)
+                    plt.axis('off')  
+                    plt.show()
+                    
+                elif eleccion_clust == "7":
+                    print("Has elegido el clustering mediante Hierarchical:")
+                    print("Cargando...")
+                    # Ruta de la imagen
+                    ruta_imagen = "clustering_images/Hierarchical.png"
+
+                    # Cargar la imagen
+                    imagen = mpimg.imread(ruta_imagen)
+
+                    # Mostrar la imagen
+                    plt.imshow(imagen)
+                    plt.axis('off')  
+                    plt.show()
+                    
+                elif eleccion_clust == "8":
+                    print("Has elegido el clustering mediante Dendrograma con AgglomerativeClustering:")
+                    print("Cargando...")
+                    # Ruta de la imagen
+                    ruta_imagen = "clustering_images/dendograma.png"
+
+                    # Cargar la imagen
+                    imagen = mpimg.imread(ruta_imagen)
+
+                    # Mostrar la imagen
+                    plt.imshow(imagen)
+                    plt.axis('off')  
+                    plt.show()
+                    
+                elif eleccion_clust == "9":
+                    print("Volviendo al menú principal...")
+                    break
+                else:
+                    print("Opción no válida. Inténtalo de nuevo.")
+                    print("------------------------------------")
+                    continue
             
         elif eleccion == "3":
             print("Opcion 3")
