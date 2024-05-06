@@ -232,7 +232,7 @@ def menu():
                 print("Debes seleccionar el tipo de comparativa que deseas visualizar: ")
                 print("1. Real Madrid vs Resto de equipos(análisis gráfico)")
                 print("2. Estadísticas de los equipos en octavos de final")
-                print("3. Series temporales")
+                print("3. Barcelona Vs Bayern (Series temporales)")
                 
                 print("4. Volver al menú principal")
                 print("------------------------------------")
@@ -373,18 +373,9 @@ def menu():
                         
                     
                 elif eleccion_comp == "3":
-                    print("Has elegido las comparativas mediante series temporales:")
-                    print("Cargando...")
-                    # Ruta de la imagen
-                    ruta_imagen = "comparativas_images/series_temporales.png"
-
-                    # Cargar la imagen
-                    imagen = mpimg.imread(ruta_imagen)
-
-                    # Mostrar la imagen
-                    plt.imshow(imagen)
-                    plt.axis('off')  
-                    plt.show()
+                    print("Has elegido la comparativa Barcelona vs Bayern mediante series temporales:")
+                    print("¿Qué deseas visualizar?")
+                    
                     
                 elif eleccion_comp == "4":
                     print("Volviendo al menú principal...")
