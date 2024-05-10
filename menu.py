@@ -109,7 +109,7 @@ def menu():
                     print("Has elegido el clustering mediante K-Means:")
                     print("Cargando...")
                     # Ruta de la imagen
-                    ruta_imagen = "clustering_images/K-Means.png"
+                    ruta_imagen = "Imagenes/clustering_images/K-Means.png"
 
                     # Cargar la imagen
                     imagen = mpimg.imread(ruta_imagen)
@@ -124,7 +124,7 @@ def menu():
                     print("Has elegido el clustering mediante Mean-Shift:")
                     print("Cargando...")
                     # Ruta de la imagen
-                    ruta_imagen = "clustering_images/Mean-Shift.png"
+                    ruta_imagen = "Imagenes/clustering_images/Mean-Shift.png"
 
                     # Cargar la imagen
                     imagen = mpimg.imread(ruta_imagen)
@@ -138,7 +138,7 @@ def menu():
                     print("Has elegido el clustering mediante Mini-Batch K-Means:")
                     print("Cargando...")
                     # Ruta de la imagen
-                    ruta_imagen = "clustering_images/Mini-Batch K-Means.png"
+                    ruta_imagen = "Imagenes/clustering_images/Mini-Batch K-Means.png"
 
                     # Cargar la imagen
                     imagen = mpimg.imread(ruta_imagen)
@@ -152,7 +152,7 @@ def menu():
                     print("Has elegido el clustering mediante DBSCAN:")
                     print("Cargando...")
                     # Ruta de la imagen
-                    ruta_imagen = "clustering_images/DBSCAN.png"
+                    ruta_imagen = "Imagenes/clustering_images/DBSCAN.png"
 
                     # Cargar la imagen
                     imagen = mpimg.imread(ruta_imagen)
@@ -166,7 +166,7 @@ def menu():
                     print("Has elegido el clustering mediante OPTICS:")
                     print("Cargando...")
                     # Ruta de la imagen
-                    ruta_imagen = "clustering_images/OPTICS.png"
+                    ruta_imagen = "Imagenes/clustering_images/OPTICS.png"
 
                     # Cargar la imagen
                     imagen = mpimg.imread(ruta_imagen)
@@ -180,7 +180,7 @@ def menu():
                     print("Has elegido el clustering mediante GMM:")
                     print("Cargando...")
                     # Ruta de la imagen
-                    ruta_imagen = "clustering_images/GMM.png"
+                    ruta_imagen = "Imagenes/clustering_images/GMM.png"
 
                     # Cargar la imagen
                     imagen = mpimg.imread(ruta_imagen)
@@ -194,7 +194,7 @@ def menu():
                     print("Has elegido el clustering mediante Hierarchical:")
                     print("Cargando...")
                     # Ruta de la imagen
-                    ruta_imagen = "clustering_images/Hierarchical.png"
+                    ruta_imagen = "Imagenes/clustering_images/Hierarchical.png"
 
                     # Cargar la imagen
                     imagen = mpimg.imread(ruta_imagen)
@@ -208,7 +208,7 @@ def menu():
                     print("Has elegido el clustering mediante Dendrograma con AgglomerativeClustering:")
                     print("Cargando...")
                     # Ruta de la imagen
-                    ruta_imagen = "clustering_images/dendograma.png"
+                    ruta_imagen = "Imagenes/clustering_images/dendograma.png"
 
                     # Cargar la imagen
                     imagen = mpimg.imread(ruta_imagen)
@@ -257,7 +257,7 @@ def menu():
                             print("Has elegido la comparativa mediante gráfico de densidad:")
                             print("Cargando...")
                             # Ruta de la imagen
-                            ruta_imagen = "analisis_madrid_images/distr_vic_ult10_temp.png"
+                            ruta_imagen = "Imagenes/analisis_madrid_images/distr_vic_ult10_temp.png"
 
                             # Cargar la imagen
                             imagen = mpimg.imread(ruta_imagen)
@@ -271,7 +271,7 @@ def menu():
                             print("Has elegido la comparativa de titulos UCL:")
                             print("Cargando...")
                             # Ruta de la imagen
-                            ruta_imagen = "analisis_madrid_images/titulos.png"
+                            ruta_imagen = "Imagenes/analisis_madrid_images/titulos.png"
 
                             # Cargar la imagen
                             imagen = mpimg.imread(ruta_imagen)
@@ -285,7 +285,7 @@ def menu():
                             print("Has elegido la comparativa en goles:")
                             print("Cargando...")
                             # Ruta de la imagen
-                            ruta_imagen = "analisis_madrid_images/goles_ult10_temp.png"
+                            ruta_imagen = "Imagenes/analisis_madrid_images/goles_ult10_temp.png"
 
                             # Cargar la imagen
                             imagen = mpimg.imread(ruta_imagen)
@@ -323,7 +323,7 @@ def menu():
                             print("Has elegido el análisis mediante BoxPlot:")
                             print("Cargando...")
                             # Ruta de la imagen
-                            ruta_imagen = "analisis_grafico_images/boxplot.png"
+                            ruta_imagen = "Imagenes/analisis_grafico_images/boxplot.png"
 
                             # Cargar la imagen
                             imagen = mpimg.imread(ruta_imagen)
@@ -337,7 +337,7 @@ def menu():
                             print("Has elegido el análisis mediante HeatMap de la correlación:")
                             print("Cargando...")
                             # Ruta de la imagen
-                            ruta_imagen = "analisis_grafico_images/heatmap.png"
+                            ruta_imagen = "Imagenes/analisis_grafico_images/heatmap.png"
 
                             # Cargar la imagen
                             imagen = mpimg.imread(ruta_imagen)
@@ -351,7 +351,7 @@ def menu():
                             print("Has elegido el análisis mediante ScatterPlot:")
                             print("Cargando...")
                             # Ruta de la imagen
-                            ruta_imagen = "analisis_grafico_images/Scatter.png"
+                            ruta_imagen = "Imagenes/analisis_grafico_images/Scatter.png"
 
                             # Cargar la imagen
                             imagen = mpimg.imread(ruta_imagen)
@@ -390,8 +390,8 @@ def menu():
                             print("Has elegido la primera predicción:")
                             print("Cargando...")
                             # Ruta de la imagen
-                            ruta_imagen = "ARIMA_comparar_images/pred_ult_tempBarsa.png"
-                            ruta_imagen2 = "ARIMA_comparar_images/pred_ult_tempBayern.png"
+                            ruta_imagen = "Imagenes/ARIMA_comparar_images/pred_ult_tempBarsa.png"
+                            ruta_imagen2 = "Imagenes/ARIMA_comparar_images/pred_ult_tempBayern.png"
 
                             # Cargar la imagen
                             imagen = mpimg.imread(ruta_imagen)
@@ -410,7 +410,7 @@ def menu():
                             print("Has elegido la comparativa mediante ARIMA ajustado:")
                             print("Cargando...")
                             # Ruta de la imagen
-                            ruta_imagen = "ARIMA_comparar_images/ajuste_arima.png"
+                            ruta_imagen = "Imagenes/ARIMA_comparar_images/ajuste_arima.png"
 
                             # Cargar la imagen
                             imagen = mpimg.imread(ruta_imagen)
@@ -424,7 +424,7 @@ def menu():
                             print("Has elegido la comparativa mediante ARIMA y Random Forest:")
                             print("Cargando...")
                             # Ruta de la imagen
-                            ruta_imagen = "ARIMA_comparar_images/multv_RF.png"
+                            ruta_imagen = "Imagenes/ARIMA_comparar_images/multv_RF.png"
 
                             # Cargar la imagen
                             imagen = mpimg.imread(ruta_imagen)
