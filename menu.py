@@ -454,7 +454,130 @@ def menu():
                     continue
                 
         elif eleccion == "4":
-            print("Opcion 4")
+            print("Vamos a realizar un análisis de series temporales  de los goles de los equipos en octavos de final en los últimos 10 años.")
+            print("Selecciona el tipo de serie temporal que deseas visualizar (se recomienda por orden): ")
+            
+            while True:
+                print("1. Gráfica para obtener el parametro d de la serie temporal")
+                print("2. Prueba de Dickey-Fuller para comprobar si la serie es estacionaria")
+                print("3. Gráfica de Dickey-Fuller para obtener el parametro p")
+                print("4. Modelo ARIMA Ajustado")
+                print("5. Predicción de goles usando Recursive Forecasting Random Forest")
+                print("6. Predicción de goles usando Recursive Forecasting con Gradient Boosting")
+                print("7. Predicción de goles uando Multivariate Forecasting con Random Forest")
+                print("8. Volver al menú principal")
+                print("------------------------------------")
+                eleccion_serie = input("Escribe el número de la opción que deseas visualizar: ")
+                print("------------------------------------")
+                if eleccion_serie == "1":
+                    print("Has elegido la gráfica para obtener el parametro d de la serie temporal:")
+                    print("Cargando...")
+                    # Ruta de la imagen
+                    ruta_imagen = "Imagenes/series_images/encontrar_d.png"
+
+                    # Cargar la imagen
+                    imagen = mpimg.imread(ruta_imagen)
+
+                    # Mostrar la imagen
+                    plt.imshow(imagen)
+                    plt.axis('off')  
+                    plt.show()
+                    
+                elif eleccion_serie == "2":
+                    print("Has elegido la prueba de Dickey-Fuller para comprobar si la serie es estacionaria:")
+                    print("Cargando...")
+                    # Ruta de la imagen
+                    ruta_imagen = "Imagenes/series_images/autocorre.png"
+
+                    # Cargar la imagen
+                    imagen = mpimg.imread(ruta_imagen)
+
+                    # Mostrar la imagen
+                    plt.imshow(imagen)
+                    plt.axis('off')  
+                    plt.show()
+                    
+                elif eleccion_serie == "3":
+                    print("Has elegido la gráfica de Dickey-Fuller para obtener el parametro p:")
+                    print("Cargando...")
+                    # Ruta de la imagen
+                    ruta_imagen = "Imagenes/series_images/encontrar_p.png"
+
+                    # Cargar la imagen
+                    imagen = mpimg.imread(ruta_imagen)
+
+                    # Mostrar la imagen
+                    plt.imshow(imagen)
+                    plt.axis('off')  
+                    plt.show()
+                    
+                elif eleccion_serie == "4":
+                    print("Has elegido el modelo ARIMA Ajustado:")
+                    print("Cargando...")
+                    # Ruta de la imagen
+                    ruta_imagen = "Imagenes/series_images/ajuste_arima.png"
+
+                    # Cargar la imagen
+                    imagen = mpimg.imread(ruta_imagen)
+
+                    # Mostrar la imagen
+                    plt.imshow(imagen)
+                    plt.axis('off')  
+                    plt.show()
+                    
+                elif eleccion_serie == "5":
+                    print("Has elegido la predicción de goles usando Recursive Forecasting Random Forest:")
+                    print("Cargando...")
+                    # Ruta de la imagen
+                    ruta_imagen = "Imagenes/series_images/recursive_forecasting_rf.png"
+
+                    # Cargar la imagen
+                    imagen = mpimg.imread(ruta_imagen)
+                    
+                    # Mostrar la imagen
+                    plt.imshow(imagen)
+                    plt.axis('off')
+                    plt.show()
+                
+                elif eleccion_serie == "6":
+                    print("Has elegido la predicción de goles usando Recursive Forecasting con Gradient Boosting:")
+                    print("Cargando...")
+                    # Ruta de la imagen
+                    ruta_imagen = "Imagenes/series_images/recrusive_forecasting_gb.png"
+
+                    # Cargar la imagen
+                    imagen = mpimg.imread(ruta_imagen)
+                    
+                    # Mostrar la imagen
+                    plt.imshow(imagen)
+                    plt.axis('off')
+                    plt.show()
+                    
+                elif eleccion_serie == "7":
+                    print("Has elegido la predicción de goles usando Multivariate Forecasting con Random Forest:")
+                    print("Cargando...")
+                    # Ruta de la imagen
+                    ruta_imagen = "Imagenes/series_images/multiv_rf.png"
+
+                    # Cargar la imagen
+                    imagen = mpimg.imread(ruta_imagen)
+                    
+                    # Mostrar la imagen
+                    plt.imshow(imagen)
+                    plt.axis('off')
+                    plt.show()
+                    
+                elif eleccion_serie == "8":
+                    print("Volviendo al menú principal...")
+                    break
+                
+                else:
+                    print("Opción no válida. Inténtalo de nuevo.")
+                    print("------------------------------------")
+                    sleep(1.5)
+                    continue
+                        
+                        
                         
         elif eleccion == "5":
             print("Opcion 5")

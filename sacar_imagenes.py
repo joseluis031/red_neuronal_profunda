@@ -21,6 +21,6 @@ def extract_images_from_notebook(notebook_path, output_dir):
                         img_file.write(image_data_decoded)
 
 if __name__ == "__main__":
-    notebook_path = "ARIMA_comparar/sarima_y_arima_comparacion.ipynb"
-    output_directory = "ARIMA_comparar_images"
+    notebook_path = "series.ipynb"
+    output_directory = "Imagenes/series_images"
     extract_images_from_notebook(notebook_path, output_directory)
