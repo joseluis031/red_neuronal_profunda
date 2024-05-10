@@ -56,5 +56,28 @@ Este trabajo hemos conseguido realizar diferentes predicciones del ganador de la
 
   En esta carpeta, usando XGBoost obtenido una predicción de la eliminatoria UCL y hemos evaluado esa predicción.
 
+### Otros
+- Carpeta Imagenes
+
+  Aquí guardamos todas las imagenes que hemos obtenido en los notebooks
+
+-  sacar_imagenes.py
+
+  Aquí se encuentra el codigo utilizado para scar las imagenes de los notebooks
+
+- menu.py
+
+  Aquí se encuentra el manu diseñado para visualizar el programa
+
+- main.py
+
+  A partir de este archivo podemos ejecutar cualquier tipo de codigo del proyecto
+
+- Carpeta CSVS
+
+  Aquí se encuentran los datos con las temporadas con las que hemos trabajado
+
+  ------------------------------------------------
+
 
 
