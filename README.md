@@ -129,6 +129,44 @@ Este trabajo hemos conseguido realizar diferentes predicciones del ganador de la
 ## Modelo <a name="id4"></a>
 
 ## Clustering <a name="id5"></a>
+### K-Means
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/d7b24eed-9c4c-4b19-bbf3-9ee96447a055)
+----------------------------------
+
+### Mean-Shift
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/c298e148-1be4-4d4a-9174-e49820e2d676)
+-----------------------------------
+
+### Mini-Batch K-Means
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/b0d470ff-0396-4511-927a-37db9ca578ed)
+-----------------------------------
+### DBSCAN
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/af127bb5-db6e-45e7-91c3-358e57663a25)
+-----------------------------------
+
+### OPTICS
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/9af362e5-d2c8-4e34-b72c-7c0d4918bdf4)
+-----------------------------------
+
+### GMM
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/9afa7497-5143-4dec-b34b-71d89c74cff5)
+-----------------------------------
+
+### Hierarchical
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/9cf9cda3-e9e6-4fdc-9582-e9a2d486d1a5)
+-----------------------------------
+
+### Dendrograma con AgglomerativeClustering
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/cc112b42-e08c-4212-af4c-f1caed601a0d)
+-----------------------------------
 
 ## Series <a name="id6"></a>
 
