@@ -158,7 +158,22 @@ Real Madrid,6.0,0.0,0.0,100.0,0.0,0.0,41.0,9.0,14.0,64.1,14.1,21.9,8,8,2,5,80.0,
 
 ## Análisis Madrid <a name="id3"></a>
 
+### Gráfico de Densidad con la Comparacion de las victorias de las ultimas 10 temporadas del real madrid con la media de las victorias de los demas equipos
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/c8032f9c-c364-49c2-a884-4b9333d9501b)
+-----------------------------------------------------------------------------------
+### Gráfico de barras con la Comparacion de titulos UCL ganados del Real Madrid vs la suma de los titulos de todos los clasificados a octavos
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/69a6c43a-8f27-4729-a2d8-a956d38be85b)
+----------------------------------------------------
+### Gráfica de barras con la Comparacion en goles del real madrid vs la media de goles del resto de equipos
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/d5ce3505-01eb-45da-b103-898712eebd11)
+------------------------------------------------------------------------
+
+
 ## Modelo <a name="id4"></a>
+
+
+
 
 ## Clustering <a name="id5"></a>
 ### K-Means
