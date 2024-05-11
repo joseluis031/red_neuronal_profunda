@@ -82,16 +82,40 @@ Este trabajo hemos conseguido realizar diferentes predicciones del ganador de la
 # Predicciones
 
 ## Metodo Gaussiano <a name="id7"></a>
+### Resultado
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/ccf316da-4e09-44b1-b080-744df6233e7d)
+
 
 ## Random Forest <a name="id8"></a>
+### Resultado
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/69781a9d-bc1b-4baf-b83e-467ad208fc05)
+
 
 ## CNN <a name="id9"></a>
+### Resultado
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/6714e637-a6f6-4650-9572-0199b227919f)
+
 
 ## DNN <a name="id10"></a>
+### Resultado
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/0cb0f187-b099-431f-9ccb-397c936a8a67)
+
 
 ## Regresion <a name="id11"></a>
+### Resultado
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/601b3f26-6084-4e8e-8ae0-605063b53709)
+
 
 ## XGBoost <a name="id12"></a>
+### Resultado
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/6faba7af-0831-4205-9fd5-bd71903d129f)
+
 
 
 # Notebooks
