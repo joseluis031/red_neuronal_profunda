@@ -149,6 +149,7 @@ Real Madrid,6.0,0.0,0.0,100.0,0.0,0.0,41.0,9.0,14.0,64.1,14.1,21.9,8,8,2,5,80.0,
 ------------------------------------------------
 ### HeatMap para ver la correlacion entre las estadisticas de los equipos
 ![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/a27670d6-c872-4ac8-9b3f-bc44faa08d3d)
+
 ------------------------------------------------
 ### ScatterPlot de las victorias de los equipos en los ult10 temp y el % de victorias
 
@@ -217,9 +218,148 @@ Real Madrid,6.0,0.0,0.0,100.0,0.0,0.0,41.0,9.0,14.0,64.1,14.1,21.9,8,8,2,5,80.0,
 
 ## Series <a name="id6"></a>
 
+### Gráfica para obtener el parametro d de la serie temporal
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/d434015c-2a35-4fd7-97ea-fe0e60a01452)
+------------------------------------------
+
+### Prueba de Dickey-Fuller para probar estacionalidad
+
+```
+Resultados de la prueba de Dickey-Fuller para columna: Close
+Test Statistic                        -4.863350
+p-value                                0.000041
+No Lags Used                           0.000000
+Número de observaciones utilizadas    15.000000
+Critical Value (1%)                   -3.964443
+Critical Value (5%)                   -3.084908
+Critical Value (10%)                  -2.681814
+dtype: float64
+Conclusion:====>
+Rechazar la hipótesis nula
+Los datos son estacionarios
+```
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/5f50f1d0-1c80-4c13-a79b-947beb3718c3)
+---------------------------------
+### Gráfica de Dickey-Fuller para obtener el parametro p
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/38840fb9-c63f-4307-b7ab-8db45100224a)
+
+### Modelo ARIMA
+
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/974f7ca9-9f95-4915-a1a0-86afa6c6a990)
+
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/965a805f-6119-4ae4-a9f7-ab5df425a5fe)
+----------------------------------
+### Predicción de goles usando Recursive Forecasting Random Forest
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/c443feef-610a-4889-a15d-4564e65ce8d8)
+---------------------------------------
+
+### Predicción de goles usando Recursive Forecasting con Gradient Boosting
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/912c2ff2-0eb5-4889-a4b3-1ff96bb66a6a)
+-----------------------------------
+
+### Predicción de goles uando Multivariate Forecasting con Random Forest
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/01f07d40-7f53-406a-8ab5-de51899cf7ba)
+-------------------------------------------------------
+
 # Otros
 
 ## Menu <a name="id13"></a>
 
+### Menu principal
+```
+Menu principal
+Que deseas realizar/visualizar?
+1. Predicciones del torneo(Regresion, Redes Neuronales, XGBoost, Random Forest, Metodo Gaussiano etc.)
+2. Clustering de los equipos que estan en octavos de final
+3. Comparativas entre equipos(Gráficas, estadísticas, ARIMA, etc.)
+4. Series temporales
+5. MonteCarlo
+6. Salir
+------------------------------------
+Escribe el número de la opción que deseas realizar:
+```
+### Menu Predicciones
+
+```
+------------------------------------
+Escribe el número de la opción que deseas realizar: 1
+------------------------------------
+Debes seleccionar el modelo de predicción que deseas utilizar:
+1. Regresión
+2. Red Neuronal Profunda
+3. Red Neuonal Convolucional
+4. XGBoost
+5. Random Forest
+6. Método Gaussiano
+7. Volver al menú principal
+------------------------------------
+Escribe el número de la opción que deseas visualizar:
+```
+
+### Menu Clustering
+
+```
+------------------------------------
+Debes seleccionar el modelo de clustering que deseas visualizar:
+1. K-Means
+2. Mean-Shift
+3. Mini-Batch K-Means
+4. DBSCAN
+5. OPTICS
+6. GMM
+7. Hierarchical
+8. Dendrograma con AgglomerativeClustering
+9. Volver al menú principal
+------------------------------------
+Escribe el número de la opción que deseas visualizar:
+```
+
+### Menu Comparativas equipos
+
+```
+------------------------------------
+Escribe el número de la opción que deseas realizar: 3
+------------------------------------
+Debes seleccionar el tipo de comparativa que deseas visualizar:
+1. Real Madrid vs Resto de equipos(análisis gráfico)
+2. Estadísticas de los equipos en octavos de final
+3. Barcelona Vs Bayern (Series temporales)
+4. Volver al menú principal
+------------------------------------
+Escribe el número de la opción que deseas visualizar:
+```
+
+### Menu Series Temporales
+
+```
+------------------------------------
+Vamos a realizar un análisis de series temporales  de los goles de los equipos en octavos de final en los últimos 10 años.
+Selecciona el tipo de serie temporal que deseas visualizar (se recomienda por orden):
+1. Gráfica para obtener el parametro d de la serie temporal
+2. Prueba de Dickey-Fuller para comprobar si la serie es estacionaria
+3. Gráfica de Dickey-Fuller para obtener el parametro p
+4. Modelo ARIMA Ajustado
+5. Predicción de goles usando Recursive Forecasting Random Forest
+6. Predicción de goles usando Recursive Forecasting con Gradient Boosting
+7. Predicción de goles uando Multivariate Forecasting con Random Forest
+8. Volver al menú principal
+------------------------------------
+Escribe el número de la opción que deseas visualizar:
+```
+
 ## Main <a name="id14"></a>
+
+```
+from menu import menu
+
+if __name__ == "__main__":
+    menu()
+
+```
 
