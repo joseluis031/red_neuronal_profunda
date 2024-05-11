@@ -173,8 +173,34 @@ Real Madrid,6.0,0.0,0.0,100.0,0.0,0.0,41.0,9.0,14.0,64.1,14.1,21.9,8,8,2,5,80.0,
 
 ## Modelo <a name="id4"></a>
 
+### Usando Random Forest
+
+- Matriz de confusion
+  
+  ![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/d339461f-9031-4248-8198-112e79971094)
+
+- Precisión
+  ```
+   Precisión del modelo: 0.96
+
+  ```
+
+- Curvas ROC
+
+  ![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/73614cd2-d010-49f8-9d27-b123c3439dc8)
 
 
+### Usando Regresión
+
+- Precisión
+  ```
+  Precisión del modelo: 0.63
+  ```
+- Precisión usando hiperparámetros
+  ```
+  Precisión promedio: 0.6042343883661249
+  Precisión promedio con C=1.0: 0.6209366980325064
+  ```
 
 ## Clustering <a name="id5"></a>
 ### K-Means
