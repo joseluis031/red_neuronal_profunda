@@ -58,6 +58,12 @@ La explicación de cada gráfica/análisis esta dentro de su respectivo Notebook
 
   En esta carpeta, usando XGBoost obtenido una predicción de la eliminatoria UCL y hemos evaluado esa predicción.
 
+- [Carpeta Arima_Comparar](#id20)
+ 
+    En esta carpeta hemos realizado una comparacion mediante series temporales de algunas estadísticas de los equipos:
+
+    Bayern y Barcelona
+
 ### Otros
 - Carpeta Imagenes
 
@@ -294,6 +300,11 @@ Los datos son estacionarios
 
 ![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/01f07d40-7f53-406a-8ab5-de51899cf7ba)
 -------------------------------------------------------
+
+### Comparacion mediante series <a name="id20"></a>
+
+![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/27dab1b5-6b70-4591-87f6-882999fb3cb6)
+
 
 # Otros
 
