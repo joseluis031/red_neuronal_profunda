@@ -2,7 +2,9 @@
 
 El link de este repositorio es el siguiente: [GitHub](https://github.com/joseluis031/red_neuronal_profunda.git)
 ---------------------------------------
-Este trabajo hemos conseguido realizar diferentes predicciones del ganador de la UCL con diferentes modelos además de diferentes análisis.
+Este trabajo hemos conseguido realizar diferentes predicciones del ganador de la UCL con diferentes modelos además de diferentes análisis como bien podrían ser clustering o series temporales.
+
+La explicación de cada gráfica/análisis esta dentro de su respectivo Notebook
 
 ## Contenido
 
