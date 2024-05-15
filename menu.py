@@ -580,7 +580,12 @@ def menu():
                         
                         
         elif eleccion == "5":
-            print("Opcion 5")
+            print("Has elegido el método de MonteCarlo:")
+            print("Cargando...")
+            from MONTECARLO.montec import main
+            main()
+            
+            break
             
             
         elif eleccion == "6":
