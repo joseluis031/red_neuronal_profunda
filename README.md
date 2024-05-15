@@ -60,9 +60,15 @@ La explicación de cada gráfica/análisis esta dentro de su respectivo Notebook
 
 - [Carpeta Arima_Comparar](#id20)
  
-    En esta carpeta hemos realizado una comparacion mediante series temporales de algunas estadísticas de los equipos:
+  En esta carpeta hemos realizado una comparacion mediante series temporales de algunas estadísticas de los equipos:
 
-    Bayern y Barcelona
+  Bayern y Barcelona
+
+- [Carpeta MONTECARLO](#id21)
+
+  En esta carpeta encontramos un script con el que hemos calculado las probabilidades de cada equipo clasificado a octavos
+  de ganar la UCL
+    
 
 ### Otros
 - Carpeta Imagenes
@@ -304,6 +310,27 @@ Los datos son estacionarios
 ### Comparacion mediante series <a name="id20"></a>
 
 ![image](https://github.com/joseluis031/red_neuronal_profunda/assets/91721888/27dab1b5-6b70-4591-87f6-882999fb3cb6)
+
+## Montecarlo <a name="id21"></a>
+
+```
+Probabilidad de que Copenhague gane la Champions League: 1.33%
+Probabilidad de que Leipzig gane la Champions League: 8.25%
+Probabilidad de que PSG gane la Champions League: 9.76%
+Probabilidad de que Lazio gane la Champions League: 2.66%
+Probabilidad de que PSV gane la Champions League: 1.41%
+Probabilidad de que Inter gane la Champions League: 6.79%
+Probabilidad de que Porto gane la Champions League: 6.65%
+Probabilidad de que Napoles gane la Champions League: 3.02%
+Probabilidad de que Bayern gane la Champions League: 10.78%
+Probabilidad de que Real Sociedad gane la Champions League: 1.30%
+Probabilidad de que Manchester City gane la Champions League: 11.26%
+Probabilidad de que Barcelona gane la Champions League: 8.05%
+Probabilidad de que Arsenal gane la Champions League: 1.78%
+Probabilidad de que Atletico Madrid gane la Champions League: 7.21%
+Probabilidad de que Dortmund gane la Champions League: 7.97%
+Probabilidad de que Real Madrid gane la Champions League: 11.77%
+```
 
 
 # Otros
